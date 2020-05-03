@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Photo Gallery</title>
+    <script type="module" src="application.mjs"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="text/x-template" id="app-template">
+      <div id="images">
+        <div>
+            <h1 v-on:click="showDesc(index)"> {{ images[index].name }} </h1>
+            <img v-bind:src="images[index].img" width="500">
+            <p>by: {{images[index].imageCredit}}
+            <p v-if="images[index].descriptionvisible">{{images[index].description }}</p>
+            <button v-on:click="previousPic(index)">Previous</button>
+            <button v-on:click="nextPic(index)">Next</button>
+        </div>
+      </div>
+    </script>
+  </body>
+</html>
